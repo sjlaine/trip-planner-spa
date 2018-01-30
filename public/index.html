@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trip planner</title>
+  <script src='bundle.js' defer></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.css' rel='stylesheet' />
+  <link rel='stylesheet' type='text/css' href='style.css' />
+</head>
+<body>
+  <div id='container' class='flex columns'>
+    <header id='navbar'><h2>TripPlanner</h2></header>
+    <div id='tripplanner' class='flex rows'>
+      <div id='map'></div>
+      <div id='sidebar' class='flex columns'>
+        <div id='addActivities'>
+          <ul>
+            <li>
+              <h2>Hotels</h2>
+              <select>
+                <option value='Hotel'>Hotel</option>
+              </select>
+              <button>+</button>
+            </li>
+            <li>
+              <h2>Restaurants</h2>
+              <select>
+                <option value='Restaurant'>Restaurant</option>
+              </select>
+              <button>+</button>
+            </li>
+            <li>
+              <h2>Activities</h2>
+              <select>
+                <option value='Activity'>Activity</option>
+              </select>
+              <button>+</button>
+            </li>
+          </ul>
+        </div>
+        <div id='itinerary'>
+          <ul>
+            <li>
+              <h2>My Hotels</h2>
+            </li>
+            <li>
+              <h2>My Restaurants</h2>
+            </li>
+            <li>
+              <h2>My Restaurants</h2>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <div>
+
+</body>
+</html>

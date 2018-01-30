@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Rammetto+One');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #C1B5AD;
+}
+
+.flex {
+  display: flex;
+}
+
+.rows {
+  flex-direction: row;
+}
+
+.columns {
+  flex-direction: column;
+}
+
+#navbar {
+  flex-basis:10%;
+  background-color: rgba(100, 100, 100, 0.5);
+}
+
+#container {
+  height: 100vh;
+}
+
+#tripplanner {
+  flex-basis:90%;
+}
+
+#map {
+  width:100vw;
+  height: inherit;
+}
+
+#sidebar {
+  position: fixed;
+  right: 0px;
+  width: 30vw;
+  height: 90vh;
+  justify-content: space-between;
+}
+
+#addActivities, #itinerary {
+  flex-basis: 48%;
+  background-color: rgba(100, 100, 100, 0.5);
+}
+
+h2 {
+  font-family: 'Rammetto One', cursive;
+}
+
+ul {
+  list-style: none;
+}
+
