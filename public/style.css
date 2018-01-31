@@ -95,7 +95,6 @@ select {
 
 button {
   font-color: white;
-  text-shadow: 2px 2px #ff0000;
   height: 30px;
   margin-right: 10px;
   -webkit-appearance: button;

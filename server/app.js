@@ -4,18 +4,18 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const {db} = require('../models');
 const app = express();
-express.static(path.join(__dirname, '..', 'public'));
+const apiRouter = require('../routes/api.js');
+
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.get('/', (req, res, next) => {
-  res.send('Hello!');
-});
-
 app.listen(3000, () => console.log('listening on port 3000!'));
+
+app.use('/api', apiRouter);
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -28,7 +28,7 @@ app.use((err, req, res, next) => {
   .then(() => {
     console.log('Database has been synced!');
   })
-  .catch(err => console.error(err).bind(console));
+  .catch(err => console.error(err));
 
   res.status(err.status || 500);
   console.error(err);
