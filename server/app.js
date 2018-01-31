@@ -2,8 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
-const db = require('../models/db.js');
-
+const {db} = require('../models');
 const app = express();
 express.static(path.join(__dirname, '..', 'public'));
 
@@ -12,7 +11,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.get('/waergkjh', (req, res, next) => {
+app.get('/', (req, res, next) => {
   res.send('Hello!');
 });
 
