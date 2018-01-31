@@ -61,28 +61,98 @@ addEventListener('DOMContentLoaded', () => {
 }
 );
 
+
+//add hotels
 addEventListener('DOMContentLoaded', () => {
   const hotelButton = document.getElementById('add-hotel');
-  const restaurantButton = document.getElementById('add-restaurant');
-  const activityButton = document.getElementById('add-activity');
-
-  let hotelSelectArr = [...document.getElementById('hotel-options').childNodes];
-  console.dir(hotelSelectArr);
-
-  for (let i = 0; i < hotelSelectArr.length; i++) {
-    console.log('nodes:', hotelSelectArr[i].innerText);
-  }
 
   hotelButton.addEventListener('click', () => {
+    function show_selected() {
+    var selector = document.getElementById('hotel-options');
+    var value = selector[selector.selectedIndex].value;
 
-  });
+    return value;
+    }
+
+    const selectedHotel = show_selected();
+
+    const myHotels = document.getElementById('list-hotel');
+    const addedHotel = document.createElement('li');
+    const hotelItem = document.createTextNode(selectedHotel);
+    const removeButton = document.createElement('button');
+    removeButton.innerHTML = 'X';
+
+    addedHotel.appendChild(hotelItem);
+    addedHotel.appendChild(removeButton);
+
+    addedHotel.addEventListener('click', () => {
+      addedHotel.remove();
+    })
+
+    myHotels.append(addedHotel);
+    })
 });
 
+//add restaurants
+addEventListener('DOMContentLoaded', () => {
+  const restaurantButton = document.getElementById('add-restaurant');
 
-// const selectedHotel = console.log('test select', document.getElementById('hotel-options').selectedIndex.value);
+  restaurantButton.addEventListener('click', () => {
+    function show_selected() {
+    var selector = document.getElementById('restaurant-options');
+    var value = selector[selector.selectedIndex].value;
 
-// if (document.getElementById('hotel-options').selectedIndex === 0) {
-//   console.log('val', document.getElementById('hotel-options').innerHTML);
-// }
+    return value;
+    }
 
+    const selectedRestaurant = show_selected();
+
+    const myRestaurants = document.getElementById('list-restaurant');
+    const addedRestaurant = document.createElement('li');
+    const restaurantItem = document.createTextNode(selectedRestaurant);
+    const removeButton = document.createElement('button');
+    removeButton.innerHTML = 'X';
+
+    addedRestaurant.appendChild(restaurantItem);
+    addedRestaurant.appendChild(removeButton);
+
+    addedRestaurant.addEventListener('click', () => {
+      addedRestaurant.remove();
+    })
+
+    myRestaurants.append(addedRestaurant);
+    })
+
+});
+
+//add activities
+addEventListener('DOMContentLoaded', () => {
+  const activityButton = document.getElementById('add-activity');
+
+  activityButton.addEventListener('click', () => {
+    function show_selected() {
+    var selector = document.getElementById('activity-options');
+    var value = selector[selector.selectedIndex].value;
+
+    return value;
+    }
+
+    const selectedActivity = show_selected();
+
+    const myActivities = document.getElementById('list-activity');
+    const addedActivity = document.createElement('li');
+    const activityItem = document.createTextNode(selectedActivity);
+    const removeButton = document.createElement('button');
+    removeButton.innerHTML = 'X';
+
+    addedActivity.appendChild(activityItem);
+    addedActivity.appendChild(removeButton);
+
+    addedActivity.addEventListener('click', () => {
+      addedActivity.remove();
+    })
+
+    myActivities.append(addedActivity);
+    })
+});
 
